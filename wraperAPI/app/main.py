@@ -1,4 +1,7 @@
 from fastapi import FastAPI
+import uvicorn
+
+
 
 
 app = FastAPI()
@@ -6,7 +9,7 @@ app.title ="Challenge API"
 
 @app.get("/")
 def home():
-    return {"status":"ok"}
+    return {"message":"ok"}
 @app.get("/answer")
 def answers():
     pass
@@ -34,3 +37,6 @@ def d17():
 @app.get("/d18")
 def d18():
     pass
+
+if __name__ == '__main__':
+    uvicorn.run(app)
