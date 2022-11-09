@@ -7,6 +7,7 @@ from fastapi import Body, Query, Path
 from pydantic import BaseModel
 # external
 from .apistack import getList
+from .database import vuelosanio
 app = FastAPI()
 
 
@@ -148,5 +149,19 @@ ___
     resp = data['items'][2:5]
     print(resp)
     return {"data": resp, "status": "success"} 
-# @app.get("/api/answered")
-# @app.get("/api/answered")
+@app.get("/api/topvuelos",
+    status_code= 201,)
+async def topvuelos():
+    """
+# Topvuelos
+> Obtiene el aeropuerto con mayor numero de vuelos  separado por año 
+___
+## Partemetros
+    - No aplica
+## Respuesta
+    - response {data: dict , status:(succes|error)}
+    """
+
+    resp = await vuelosanio()
+    print(resp)
+    return {"data":resp,"status": "succes"}

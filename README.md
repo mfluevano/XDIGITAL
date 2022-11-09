@@ -2,18 +2,16 @@
 
 ___
 
-#
-<p align="center">
-	</a>
-	<a href="https://gitmoji.dev">
-		<img src="https://img.shields.io/badge/gitmoji-🔥-FFDD67.svg?style=flat-square"
-			 alt="Gitmoji">
-	</a>
-</p>
-
 
 > Para probar  creamos la imagen y procedemos a su ejecucion en un contenedor 
 
 ```
- docker build -t challengeapi .
+ $ docker build . -t  xalapi
+ $ docker run -d  --name apiChallenge -p 8000:8000 xalapi
+ $ docker build . -t  xalmysql
+ $ docker run -d --rm --name mysql -p 3306:3306 
+xalmysql
+$ docker ps
+                 apiChallenge
+
  ```
