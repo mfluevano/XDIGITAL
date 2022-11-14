@@ -1,8 +1,9 @@
 FROM node:18.8.0
 
-WORKDIR /app
+RUN mkdir /usr/src/app 
+ 
+WORKDIR /usr/src/app
 
-COPY . ./
+RUN npm install -g @angular/cli 
 
-RUN npm install
-RUN npm run build
+COPY ./xalFront .

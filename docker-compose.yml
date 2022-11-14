@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  angular-service-front: # The name of the service
+    container_name: angularcontainer  # Container name
+    build: ./frontend/xalFront/
+    volumes: # Volume binding
+      - './frontend/xalFront/:/usr/src/app' 
+    ports: 
+      - '4200:4200' # Port mapping
+  api:
+    container_name: 'Api'
+    build: ./wraperAPI/
+    ports:
+      - '8000:8000'
+    expose:
+      - '8000'
+    links:
+    - mysql
+  mysql:
+    container_name: 'db'
+    tty: true
+    build: ./mysql/
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'root'
+    
+ 
+ 

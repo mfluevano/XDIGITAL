@@ -7,7 +7,7 @@ from fastapi import Body, Query, Path
 from pydantic import BaseModel
 # external
 from .apistack import getList
-from .database import vuelosanio
+from .database import aeropuerto,aerolinea,dia,afluencia
 app = FastAPI()
 
 
@@ -146,22 +146,31 @@ ___
     data = await getList()
     if not data:
         raise HTTPException(status_code=404)
-    resp = data['items'][2:5]
+    resp = data['items'][1:6]
     print(resp)
     return {"data": resp, "status": "success"} 
-@app.get("/api/topvuelos",
-    status_code= 201,)
-async def topvuelos():
-    """
-# Topvuelos
-> Obtiene el aeropuerto con mayor numero de vuelos  separado por año 
-___
-## Partemetros
-    - No aplica
-## Respuesta
-    - response {data: dict , status:(succes|error)}
-    """
 
-    resp = await vuelosanio()
-    print(resp)
-    return {"data":resp,"status": "succes"}
+@app.get("/api/get_aeropuerto")
+async def ep_aeropuerto():
+    data= await aeropuerto()
+    if not data: 
+        raise HTTPException(status_code=404)
+    return {"data": data,"status":"success"}
+@app.get("/api/get_aerolinea")
+async def ep_aerolinea():
+    data= await aerolinea()
+    if not data: 
+        raise HTTPException(status_code=404)
+    return {"data": data,"status":"success"}
+@app.get("/api/get_dia")
+async def ep_dia():
+    data= await dia()
+    if not data: 
+        raise HTTPException(status_code=404)
+    return {"data": data,"status":"success"}
+@app.get("/api/get_afluencia")
+async def ep_afluencia():
+    data= await afluencia()
+    if not data: 
+        raise HTTPException(status_code=404)
+    return {"data": data,"status":"success"}#

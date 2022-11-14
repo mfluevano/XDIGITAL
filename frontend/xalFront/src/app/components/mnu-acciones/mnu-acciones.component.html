@@ -1,0 +1,106 @@
+<div class="titulo">
+  <h1>{{title}}</h1>
+</div>
+
+<div class="menu" [class.active]="active" (click)="toggleMenu()">
+  <div class="btn trigger">
+    <span class="line"></span>
+  </div>
+  <div class="icons">
+    <div class="rotater">
+      <div
+      class="btn btn-icon"
+      (click)="show(1)"
+      (mouseout)="mouseUp('Seleccione Una Opcion')"
+      (mouseover)="mouseUp('Contestadas / No contestadas')"
+    >
+      <fa-icon [icon]="fa1"></fa-icon>
+    </div>
+    </div>
+
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(2)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Mayor Reputacion')"
+      >
+        <fa-icon [icon]="fa2"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(3)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Menor numero visitas')"
+      >
+        <fa-icon [icon]="fa3"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(4)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Mas vieja y mas actual')"
+      >
+        <fa-icon [icon]="fa4"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(5)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Imprimir en consola elementos 2 a 5 ')"
+      >
+        <fa-icon [icon]="fa5"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(6)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Mayor movimiento ')"
+      >
+        <fa-icon [icon]="fa6"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(7)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Mayor  numero de vuelos')"
+  >
+        <fa-icon [icon]="fa7"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(8)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Dia con mas vuelos')"
+      >
+        <fa-icon [icon]="fa8"></fa-icon>
+      </div>
+    </div>
+    <div class="rotater">
+      <div
+        class="btn btn-icon"
+        (click)="show(9)"
+        (mouseout)="mouseUp('Seleccione Una Opcion')"
+        (mouseover)="mouseUp('Aerolinea con mas de dos vuelos el mismo dia')"
+      >
+        <fa-icon [icon]="fa9"></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+  <p style="color: white">Please Wait. </p>
+  </ngx-spinner>
