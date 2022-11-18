@@ -1,12 +1,38 @@
-# ChallengeK
+# Challenge
+ 
 
-<p align="center">
-	<a href="https://github.com/carloscuesta/gitmoji/actions?query=workflow%3ACI+branch%3Amaster">
-		<img src="https://img.shields.io/github/workflow/status/carloscuesta/gitmoji/CI?style=flat-square"
-			 alt="Build Status">
-	</a>
-	<a href="https://gitmoji.dev">
-		<img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square"
-			 alt="Gitmoji">
-	</a>
-</p>
+## Requisitos 
+ * ##### Nodde js 12 o superior
+ * ##### Docker 
+ * ##### Docker Compose
+ * ##### Angular CLI
+
+> Probar
+
+Primero una vez clonado el repositorioi y en raiz del proyecto  ejecutamos lo sigioente
+```
+$ docker-compose build
+$ docker-compose up -d
+```
+
+Una ves inicien los conternedores lo cual podemos revsar  con
+
+```
+$ docker-compose ps
+o $ docker ps
+```
+ procedemos a entrar al proyecto del front end y ejecutarlo con el proxy  que viene confihuradp de la siguiente manera
+
+```
+
+$ cd frontend\xalFront 
+$ npm run start:proxy
+
+```
+
+ ## Changelog
+ ___
+*	Jueves  17 de noviembre 2022 18:19 pm
+
+	* Primera Carha Funcional 
+

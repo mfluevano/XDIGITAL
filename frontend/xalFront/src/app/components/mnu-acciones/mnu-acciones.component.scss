@@ -1,4 +1,3 @@
-
 .absolute-center {
   position: absolute;
   top: 50%;
@@ -18,7 +17,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    background: rgba(255,255,255, 0.15);
+    background: rgba(255, 255, 255, 0.15);
     opacity: 0;
     z-index: -10;
     cursor: pointer;
@@ -32,7 +31,7 @@
     }
 
     &:hover .fa {
-      color: rgba(255,255,255, 0.7);
+      color: rgba(255, 255, 255, 0.7);
     }
 
     &.trigger {
@@ -45,10 +44,11 @@
         transform: scale(1.2);
 
         .line {
-          background-color: rgba(255,255,255, 0.7);
+          background-color: rgba(255, 255, 255, 0.7);
 
-          &:before, &:after {
-            background-color: rgba(255,255,255, 0.7);
+          &:before,
+          &:after {
+            background-color: rgba(255, 255, 255, 0.7);
           }
         }
       }
@@ -61,7 +61,8 @@
         border-radius: 6px;
         transition: background-color 0.3s, height 0.3s, top 0.3s;
 
-        &:before, &:after {
+        &:before,
+        &:after {
           content: "";
           display: block;
           position: absolute;
@@ -94,14 +95,12 @@
   }
 
   &.active {
-
     .btn-icon {
       opacity: 1;
       z-index: 50;
     }
 
     .trigger {
-
       .line {
         height: 0px;
         top: 45%;
@@ -122,21 +121,19 @@
 $numOfElems: 9;
 
 @for $i from 1 through $numOfElems {
-  $deg: 360deg / $numOfElems;
+  $deg: 40deg;
   .rotater:nth-child(#{$i}) {
-    transform: rotate($deg/-2 + $deg * ($i - 1));
+    transform: rotate(-200 + $deg * ($i - 1));
   }
 
   .menu.active {
     .rotater:nth-child(#{$i}) .btn-icon {
-      transform: translateY(-10em) rotate($deg/2 - $deg * ($i - 1));
+      transform: translateY(-10em) rotate(200 - $deg * ($i - 1));
     }
   }
 }
 
-.side-bar
-{
-
+.side-bar {
   position: fixed;
   top: 0;
   left: 50%;
@@ -146,27 +143,26 @@ $numOfElems: 9;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  transition: all ease-out .5s;
+  transition: all ease-out 0.5s;
   transform: translateX(100%);
-  &.active{
+  &.active {
     transform: translateX(0);
   }
 }
 
-.titulo{
+.titulo {
   margin: auto;
   text-align: center;
   color: #fff;
   text-shadow: #fff 0 0 10px;
 }
 
-#logo h1{
-   font-size: 58px;
-   font-family: 'Times New Roman', Times, serif;
- }
+#logo h1 {
+  font-size: 58px;
+  font-family: "Times New Roman", Times, serif;
+}
 
-
- .ptype{
+.ptype {
   width: 0;
   overflow: hidden;
   white-space: nowrap;
@@ -190,7 +186,7 @@ $numOfElems: 9;
   }
 }
 
-.profile-img{
+.profile-img {
   width: 30%;
   border-radius: 50%;
 }

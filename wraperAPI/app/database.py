@@ -6,7 +6,7 @@ class vuelosDb:
         self.connection = pymysql.connect(
         # si se ejecuta sin  correr desde docker ya sea con nginx o con uvicorn  el host es localhost o  el ip de l servidor
         #host con valor mysql solo funciona si se ejecuta desde el docker-compose up -d        
-            host='localhost',
+            host='mysql',
             user='root',
             password='root',
             db='vuelosdb'

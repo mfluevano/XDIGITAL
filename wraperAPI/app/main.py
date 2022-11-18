@@ -1,15 +1,19 @@
 # Python
-from typing import Optional
 import json
+from typing import Optional
+
 # FastAPI
-from fastapi import FastAPI, HTTPException
-from fastapi import Body, Query, Path
+from fastapi import Body, FastAPI, HTTPException, Path, Query
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
 # external
 from .apistack import getList
-from .database import aeropuerto,aerolinea,dia,afluencia
-app = FastAPI()
+from .database import aerolinea, aeropuerto, afluencia, dia
 
+app = FastAPI()
+origins = ["http://localhost:8000",     "http://localhost:4200",     "http://localhost",     "http://localhost:8080",     "http://127.0.0.1:8000",     "http://127.0.0.1:4200",     "http://127.0.0.1:",     "http://127.0.0.1:8080"]
+app.add_middleware(CORSMiddleware,allow_origins=origins,allow_credentials=False,allow_methods=["*"],allow_headers=["*"], )
 
 class response(BaseModel):
     data: dict
@@ -21,7 +25,7 @@ def root():
     return {"Message": "Hi XalDigital 😎"}
 #Obtener sumatoria de preguntas respondidas y sin respuesta 
 @app.get(
-    "/api/data", 
+    "/api/data",
     response_model=response,
     status_code= 201,
     )

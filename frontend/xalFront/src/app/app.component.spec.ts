@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+
 
 describe('AppComponent', () => {
   beforeEach(async () => {

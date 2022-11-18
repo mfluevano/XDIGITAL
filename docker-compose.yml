@@ -1,13 +1,17 @@
 version: "3.8"
 services:
-  angular-service-front: # The name of the service
-    container_name: angularcontainer  # Container name
-    build: ./frontend/xalFront/
-    volumes: # Volume binding
-      - './frontend/xalFront/:/usr/src/app' 
-    ports: 
-      - '4200:4200' # Port mapping
-  api:
+  # app:
+  #   build: ./frontend/xalFront/
+  #   command: sh -c "ng serve"
+  #   ports:
+  #     - 4200:4200
+  #   working_dir: /home/node/app
+  #   volumes:
+  #     - ./:/home/node/app
+  #     - node_modules:/home/node/app/node_modules
+  #   links:
+  #     - api
+  api:  
     container_name: 'Api'
     build: ./wraperAPI/
     ports:
@@ -15,7 +19,8 @@ services:
     expose:
       - '8000'
     links:
-    - mysql
+      - mysql
+
   mysql:
     container_name: 'db'
     tty: true
@@ -27,6 +32,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: 'root'
+volumes:
+  node_modules:
     
  
  
