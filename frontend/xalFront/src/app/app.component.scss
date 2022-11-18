@@ -121,14 +121,14 @@
 $numOfElems: 9;
 
 @for $i from 1 through $numOfElems {
-  $deg: 360deg / $numOfElems;
+  $deg: 40deg;
   .rotater:nth-child(#{$i}) {
-    transform: rotate($deg/-2 + $deg * ($i - 1));
+    transform: rotate(-200 + $deg * ($i - 1));
   }
 
   .menu.active {
     .rotater:nth-child(#{$i}) .btn-icon {
-      transform: translateY(-10em) rotate($deg/2 - $deg * ($i - 1));
+      transform: translateY(-10em) rotate(-200 - $deg * ($i - 1));
     }
   }
 }

@@ -33,14 +33,6 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    check:{
-      global:{
-        Statements: 80,
-        branches: 80,
-        unctionsL: 80,
-        Lines:80
-      }
-    },
     reporters: ['mocha'],
     port: 9876,
     colors: true,
