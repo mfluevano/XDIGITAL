@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
+import { ChallengeService } from './challenge.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceTestService {
 
-  constructor() { }
+  constructor(
+    private serviceApiTEst:ChallengeService
+
+  ) { }
+
+  public getValue(){
+    this.serviceApiTEst.get();
+    return 'My Value';
+  }
 }

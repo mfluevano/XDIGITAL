@@ -33,6 +33,11 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
+    coverageIstanbulReporter:{
+      dir: require("path").join(__dirname, "coverage"),
+      reports: ["html", "lcovonly", "text-summary"], // <- Right Here
+      fixWebpackSourcePaths: true
+    },
     reporters: ['mocha'],
     port: 9876,
     colors: true,
