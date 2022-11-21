@@ -34,5 +34,5 @@ $ npm run start:proxy
  ___
 *	Jueves  17 de noviembre 2022 18:19 pm
 
-	* Primera Carha Funcional 
+	* Primera Carga Funcional 
 
