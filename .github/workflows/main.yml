@@ -2,9 +2,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [master, dev/*]
+    branches: [main, dev/*]
   pull_request:
-    branches: [master, dev/*]
+    branches: [main, dev/*]
 
 jobs:
   build:
@@ -15,12 +15,13 @@ jobs:
         node-version: [10.x]
 
     steps:
+      - working-directory: ./frontend/xalFront/
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - uses: ./frontend/xalFront/
+      
       - run: npm ci
       - run: npm run test:prod
       - run: npm run lint
